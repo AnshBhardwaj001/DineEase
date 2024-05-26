@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { connectAuthEmulator, getAuth , onAuthStateChanged } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -16,6 +17,8 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
+const auth = getAuth(app);
+// connectAuthEmulator(auth , "http://localhost:9099");
+ 
 
-
-export{db}
+export{db , auth}
